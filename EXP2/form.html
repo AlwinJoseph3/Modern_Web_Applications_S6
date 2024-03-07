@@ -12,47 +12,48 @@
   
   <form action="submit_booking.php" method="post">
     <label for="firstname">First Name:</label>
-    <input type="text" id="firstname" name="firstname" ><br>
+    <input type="text" id="firstname" name="firstname" required><br>
 
     <label for="lastname">Last Name:</label>
-    <input type="text" id="lastname" name="lastname" ><br>
+    <input type="text" id="lastname" name="lastname" required><br>
 
     <label for="dob">Date of Birth:</label>
-    <input type="date" id="dob" name="dob" ><br>
+    <input type="date" id="dob" name="dob" required><br>
 
     <label for="bookingDate">Date to book bus:</label>
-    <input type="date" id="bookingDate" name="bookingDate" ><br>
+    <input type="date" id="bookingDate" name="bookingDate" required><br>
 
     <label>Gender:</label>
-    <input class="radio" type="radio" id="male" name="gender" value="male" >
+    <input class="radio" type="radio" id="male" name="gender" value="male" required>
     <label for="male">Male</label>
-    <input class="radio" type="radio" id="female" name="gender" value="female" >
+    <input class="radio" type="radio" id="female" name="gender" value="female" required>
     <label for="female">Female</label><br><br>
 
     <label for="from">From:</label>
-    <select id="from" name="from" >
+    <select id="from" name="from" required>
       <option value="city1">Kakkand</option>
       <option value="city2">Kochi</option>
       <option value="city3">Ernakulam</option>
     </select><br>
 
     <label for="to">To:</label>
-    <select id="to" name="to" >
+    <select id="to" name="to" required>
       <option value="city3">Vypin</option>
       <option value="city4">Kaloor</option>
       <option value="city4">Aluva</option>
     </select><br>
 
     <label for="address">Address:</label>
-    <textarea id="address" name="address" rows="4" cols="50" ></textarea><br>
+    <textarea id="address" name="address" rows="4" cols="50" required ></textarea><br>
 
     <label for="email">Email:</label>
-    <input type="email" id="email" name="email" ><br>
+    <input type="email" id="email" name="email" required><br>
 
     <label for="phone">Phone Number:</label>
-    <input type="tel" id="phone" name="phone" ><br>
+    <input type="tel" id="phone" name="phone" required><br>
 
-    <a id="submit" href="confirm.html">Book</a>
+      
+    <a id="submit" href="confirm.html"><input style="margin: 0;" type="submit"></a>
   </form>
 
 </body>
