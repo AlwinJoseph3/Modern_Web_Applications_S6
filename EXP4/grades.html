@@ -6,8 +6,9 @@
     <title>Calculate Grades</title>
 
     <style>
-        body{
+    body{
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
     }
@@ -39,25 +40,15 @@
     h2{
         font-family:'Times New Roman';
     }
+    #output{
+        background-color: aqua;
+    }
     </style>
 
 </head>
 <body>
-   <div>
-    <h2>Enter Student Grades</h2>
-    <label for="numStudents">Number of students:</label>
-    <input type="number" id="numStudents" name="numStudents"><br><br>
-    <button onclick="generateInputFields()">Generate Input Fields</button>
-    <br><br>
-
-    <div id="inputGrades">
-    </div>
-
-    <button onclick="calculateGrades()">Calculate Grades</button>
-
-    <div id="output">
-    </div>
-   </div>
+    <h1>Grade Calculator</h1><br>
+    <button onclick="calculateGrades()">Start</button>
     <script>
         
         function calculateGrade(marks) {
@@ -78,35 +69,26 @@
             return totalMarks / numberOfStudents;
         }
 
-        function generateInputFields() {
-            let numStudents = parseInt(document.getElementById('numStudents').value);
-            let inputGradesDiv = document.getElementById('inputGrades');
-            inputGradesDiv.innerHTML = '';
-
-            for (let i = 1; i <= numStudents; i++) {
-                inputGradesDiv.innerHTML += "<label for='student" + i + "'>Enter marks of student " + i + ":</label>";
-                inputGradesDiv.innerHTML += "<input type='number' id='student" + i + "' name='student" + i + "'><br>";
-            }
-        }
+       
 
         function calculateGrades() {
-            let numStudents = parseInt(document.getElementById('numStudents').value);
+            let numStudents = parseInt(prompt("Enter number of students"));
             let totalMarks = 0;
 
             let outputDiv = document.getElementById('output');
-            outputDiv.innerHTML = "<h2>Student Grades</h2>";
+            document.write("<h2>Student Grades</h2>");
 
             for (let i = 1; i <= numStudents; i++) {
-                let marks = parseInt(document.getElementById('student' + i).value);
+                let marks = parseInt(prompt("Student" + i));
                 totalMarks += marks;
 
                 let grade = calculateGrade(marks);
-                outputDiv.innerHTML += "<p>Student " + i + " got " + grade + " grade.</p>";
+                document.write("<p>Student " + i + " got " + grade + " grade.</p>");
             }
 
             let averageGrade = calculateAverageGrade(totalMarks, numStudents);
-            outputDiv.innerHTML += "<h2>Average Grade</h2>";
-            outputDiv.innerHTML += "<p>Average grade of the class: " + calculateGrade(averageGrade) + "</p>";
+            document.write("<h2>Average Grade</h2>");
+            document.write("<p>Average grade of the class: " + calculateGrade(averageGrade) + "</p>");
         }
     </script>
     
