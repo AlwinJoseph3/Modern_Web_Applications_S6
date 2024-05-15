@@ -1,0 +1,19 @@
+{
+    "books": [
+        {
+            "title": "JSON Book 1 - Oberon's Legacy",
+            "author": "Corets, Eva",
+            "price": "$44.95"
+        },
+        {
+            "title": "JSON Book 2 - Midnight Rain",
+            "author": "Ralls, Kim",
+            "price": "$5.95"
+        },
+        {
+            "title": "JSON Book 3 - Paradox Lost",
+            "author": "Kress, Peter",
+            "price": "$6.95"
+        }
+    ]
+}
